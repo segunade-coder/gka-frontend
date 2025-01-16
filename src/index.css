@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url(./assets/fonts/poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: Poppins-Medium;
+  src: url(./assets/fonts/poppins/Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: Poppins-Bold;
+  src: url(./assets/fonts/poppins/Poppins-Bold.ttf);
+}
+
+@font-face {
+  font-family: Poppins-SemiBold;
+  src: url(./assets/fonts/poppins/Poppins-SemiBold.ttf);
+}
+
+body {
+  font-family: "Poppins-Regular";
+}
+
+html body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+.links {
+  position: relative;
+}
+.links::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: white;
+  transform: translate(0px, 7px);
+  transition: all 0.3s ease-in;
+}
+.btn-with-icon {
+  @apply flex px-6 py-4 items-center rounded-full  text-sm md:text-lg;
+}
+a {
+  @apply outline-1 outline-primary/60;
+}
+* {
+  scroll-behavior: smooth;
+  /* border: 1px solid red; */
+}
+nav .active {
+  @apply font-bold;
+}
+.title {
+  font-family: "Poppins-Medium";
+}
+.motto {
+  font-family: "Vivaldi";
+}
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
