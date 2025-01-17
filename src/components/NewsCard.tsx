@@ -56,7 +56,7 @@ const NewsCard = ({
   let formatter = new Intl.DateTimeFormat(undefined, { month: "short" });
   return (
     <div className="relative card w-[100%] lg:w-[320px] rounded-lg shadow-lg lg:shadow-md">
-      <div className="absolute top-0 bg-primary w-fit min-w-[47px] h-fit right-10 rounded-bl-lg rounded-br-lg flex flex-col items-center text-xs text-white p-3">
+      <div className="absolute top-0 bg-primary w-fit min-w-[47px] h-fit right-10 rounded-bl-lg rounded-br-lg flex flex-col items-center text-xs text-white p-3 z-[1]">
         <span>{(newDate.getDay() + 1).toLocaleString().padStart(2, "0")}</span>
         <span>{formatter.format(newDate)}</span>
       </div>
@@ -65,6 +65,7 @@ const NewsCard = ({
         alt=""
         className="h-56 lg:h-44 w-full object-cover rounded-tl-lg rounded-tr-lg"
       />
+      <div className="absolute inset-0 bg-black/30 h-56 lg:h-44"></div>
       <div className="p-4 py-10 lg:py-5">
         <h3 className="text-lg font-semibold pb-3 ">{title}</h3>
         <p className="text-xs min-h-[64px]">
@@ -134,7 +135,10 @@ export const EditNewsCard = ({
       formData.append("title", editTitle);
       formData.append("body", editBody);
       formData.append("publish", publish + "");
-      formData.append("image", image && image.length > 0 ? image[0] : "");
+      formData.append(
+        "image",
+        editImage && editImage.length > 0 ? editImage[0] : ""
+      );
       toast.loading("loading...", { id: "loading-edit-news" });
       setLoading(true);
       try {
@@ -144,6 +148,7 @@ export const EditNewsCard = ({
         toast.success("Success", {
           description: "News modified successfully",
         });
+        setLoading(false);
       } catch (error) {
         setLoading(false);
       }
@@ -155,7 +160,7 @@ export const EditNewsCard = ({
   };
   return (
     <div className="relative card w-[100%] lg:w-[300px] rounded-lg shadow-lg lg:shadow-md">
-      <div className="absolute top-0 bg-primary w-fit min-w-[40px] h-fit right-10 rounded-bl-lg rounded-br-lg flex flex-col items-center text-xs text-white p-3">
+      <div className="absolute top-0 bg-primary w-fit min-w-[40px] h-fit right-10 rounded-bl-lg rounded-br-lg flex flex-col items-center text-xs text-white p-3 z-[1]">
         <span>{(newDate.getDay() + 1).toLocaleString().padStart(2, "0")}</span>
         <span>{formatter.format(newDate)}</span>
       </div>
@@ -164,6 +169,8 @@ export const EditNewsCard = ({
         alt=""
         className="h-56 lg:h-44 w-full object-cover rounded-tl-lg rounded-tr-lg"
       />
+      <div className="absolute inset-0 bg-black/30 h-56 lg:h-44"></div>
+
       <div className="p-4 py-10 lg:py-5">
         <h3 className="font-semibold pb-3 ">
           {title.slice(0, 50)}

@@ -9,7 +9,7 @@ import { IMAGE_URL } from "@/services/api";
 type Props = {
   content: NewsTypes[] | [];
 };
-const News = ({ content }: Props) => {
+const UpcomingEvents = ({ content }: Props) => {
   if (content.length === 0) {
     return (
       <section
@@ -22,10 +22,10 @@ const News = ({ content }: Props) => {
   }
   return (
     <section className="py-20 px-10 lg:px-20 relative" id="news">
-      <FloatingTag text="News" className="lg:-left-[1.5rem]" />
+      <FloatingTag text="Events" className="lg:-left-[1.5rem]" />
       <div className="py-6 w-full">
-        <h2 className="text-3xl font-bold">News Feed</h2>
-        <p className="text-primary">// See Top News.</p>
+        <h2 className="text-3xl font-bold">Upcoming School Events </h2>
+        <p className="text-primary">// Latest News and Events.</p>
       </div>
       <div className="imgs flex gap-5 py-2 justify-center flex-wrap lg:flex-nowrap">
         {content.length > 0
@@ -69,4 +69,4 @@ const News = ({ content }: Props) => {
   );
 };
 
-export default News;
+export default UpcomingEvents;

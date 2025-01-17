@@ -24,6 +24,7 @@ import { EditNewsCard } from "@/components/NewsCard";
 import { toast } from "sonner";
 import { useAddNews } from "@/hooks/mutation";
 import { FaSpinner } from "react-icons/fa6";
+import { IMAGE_URL } from "@/services/api";
 const EditNews = () => {
   const { data, isLoading, isError, refetch } = useNewsContent();
   const [title, setTitle] = useState("");
@@ -153,7 +154,15 @@ const EditNews = () => {
               date={news.createdAt}
               body={news.body}
               id={news.id}
-              image={(i + 1) % 2 === 0 ? img2 : (1 + i) % 3 === 0 ? img3 : img1}
+              image={
+                !!news.image
+                  ? IMAGE_URL + news.image
+                  : (i + 1) % 2 === 0
+                  ? img1
+                  : (1 + i) % 3 === 0
+                  ? img2
+                  : img3
+              }
               key={news.id}
               newsImage={news.image}
               publish={news.publish}

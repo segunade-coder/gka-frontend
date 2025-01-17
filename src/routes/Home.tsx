@@ -29,13 +29,13 @@ const Home = () => {
   }
   const { hero, about, history, gallery, news, slider } = data;
   return (
-    <div className="bg-slate-100">
+    <div className="bg-slate-">
       <Header />
       <Hero content={hero} slider={slider} />
       <Intro />
       <About content={about} />
       <History content={history} />
-      <Leaders content={[]} />
+      <Leaders />
       <Gallery content={gallery} />
       <News content={news} />
       <Footer content={news} />

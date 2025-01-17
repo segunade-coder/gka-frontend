@@ -7,6 +7,7 @@ import NewsCard from "./NewsCard";
 import img6 from "../assets/images/pexels-ann-h-45017-1762851.jpg";
 import img7 from "../assets/images/pexels-n-voitkevich-5642086.jpg";
 import img8 from "../assets/images/pexels-steve-1629818.jpg";
+import { IMAGE_URL } from "@/services/api";
 const AllNews = () => {
   const { data: news, isLoading, isError, refetch } = useNewsContent();
 
@@ -44,7 +45,13 @@ const AllNews = () => {
                     body={news.body}
                     id={news.id}
                     image={
-                      (i + 1) % 2 === 0 ? img7 : (1 + i) % 3 === 0 ? img8 : img6
+                      news.image !== ""
+                        ? IMAGE_URL + news.image
+                        : (i + 1) % 2 === 0
+                        ? img7
+                        : (1 + i) % 3 === 0
+                        ? img8
+                        : img6
                     }
                     key={news.id}
                     newsImage={news.image}

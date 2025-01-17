@@ -88,7 +88,7 @@ const Header = () => {
           className={`links ${activeNav === "#about" ? "active" : ""}`}
           onClick={() => setActiveNav("#about")}
         >
-          About Us
+          About us
         </a>
         {/* <a
           href="/#news"
@@ -153,7 +153,7 @@ const Header = () => {
                     }`}
                     onClick={() => setActiveNav("#about")}
                   >
-                    About Us
+                    About us
                   </a>
                   {/* <a
                     href="/#news"
