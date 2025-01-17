@@ -10,6 +10,7 @@ import PageLoader from "../components/PageLoader";
 import QueryError from "@/components/QueryError";
 import Intro from "@/components/Intro";
 import Leaders from "@/components/Leaders";
+import UpcomingEvents from "@/components/UpcomingEvents";
 
 const Home = () => {
   const { data, isLoading, isError, refetch } = useGetInitialData();
@@ -37,6 +38,7 @@ const Home = () => {
       <History content={history} />
       <Leaders />
       <Gallery content={gallery} />
+      <UpcomingEvents content={news} />
       <News content={news} />
       <Footer content={news} />
     </div>

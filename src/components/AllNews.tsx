@@ -4,10 +4,8 @@ import { useNewsContent } from "@/hooks/query";
 import QueryError from "./QueryError";
 import QueryLoader from "./QueryLoader";
 import NewsCard from "./NewsCard";
-import img6 from "../assets/images/pexels-ann-h-45017-1762851.jpg";
-import img7 from "../assets/images/pexels-n-voitkevich-5642086.jpg";
-import img8 from "../assets/images/pexels-steve-1629818.jpg";
 import { IMAGE_URL } from "@/services/api";
+import { getRandomImages } from "@/lib/utils";
 const AllNews = () => {
   const { data: news, isLoading, isError, refetch } = useNewsContent();
 
@@ -47,11 +45,7 @@ const AllNews = () => {
                     image={
                       news.image !== ""
                         ? IMAGE_URL + news.image
-                        : (i + 1) % 2 === 0
-                        ? img7
-                        : (1 + i) % 3 === 0
-                        ? img8
-                        : img6
+                        : getRandomImages(i)
                     }
                     key={news.id}
                     newsImage={news.image}
