@@ -11,6 +11,7 @@ import QueryError from "@/components/QueryError";
 import Intro from "@/components/Intro";
 import Leaders from "@/components/Leaders";
 import UpcomingEvents from "@/components/UpcomingEvents";
+import Testimonials from "@/components/Testimonials";
 
 const Home = () => {
   const { data, isLoading, isError, refetch } = useGetInitialData();
@@ -30,7 +31,7 @@ const Home = () => {
   }
   const { hero, about, history, gallery, news, slider } = data;
   return (
-    <div className="bg-slate-">
+    <div className="bg-slate-100">
       <Header />
       <Hero content={hero} slider={slider} />
       <Intro />
@@ -40,6 +41,7 @@ const Home = () => {
       <Gallery content={gallery} />
       <UpcomingEvents content={news} />
       <News content={news} />
+      <Testimonials />
       <Footer content={news} />
     </div>
   );

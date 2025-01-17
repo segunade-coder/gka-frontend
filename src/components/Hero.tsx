@@ -12,7 +12,7 @@ const Hero = ({ content, slider }: Props) => {
   }
 
   return (
-    <section className="hero-content flex flex-col lg:flex-row px-0 lg:px-10 lg:pr-0 pb-20 h-[calc(100vh-75px)]">
+    <section className="hero-content flex flex-col lg:flex-row px-0 lg:px-10 lg:pr-0 pb-20 h-[calc(100vh-70px)]">
       <article className="md:w-[65%] md:px-10 order-1 lg:flex-1 px-5 lg:px-2 lg:-order-1 py-5 md:py-3 lg:py-10 text-gray-700 flex flex-col md:justify-center pr-5 h-[calc(100vh-72px)]">
         <h1 className="text-2xl md:text-3xl lg:text-5xl font-semibold lg:leading-[4rem] tracking-wide md:py-2 ">
           {content.mainText}

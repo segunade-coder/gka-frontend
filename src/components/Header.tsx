@@ -89,7 +89,7 @@ const Header = () => {
               Learning Programs <MdKeyboardArrowDown />
             </Button>
           </HoverCardTrigger>
-          <HoverCardContent className="w-40 p-0">
+          <HoverCardContent className="w-52 p-0">
             <div className="flex flex-col text-sm">
               <a href="#calendar" className="hover:bg-slate-300 p-3">
                 Calendar
@@ -107,7 +107,7 @@ const Header = () => {
               About us <MdKeyboardArrowDown />
             </Button>
           </HoverCardTrigger>
-          <HoverCardContent className="w-40 p-0">
+          <HoverCardContent className="w-52 p-0">
             <div className="flex flex-col text-sm">
               <a href="#intro" className="hover:bg-slate-300 p-3">
                 Introduction
@@ -117,6 +117,9 @@ const Header = () => {
               </a>
               <a href="#history" className="hover:bg-slate-300 p-3">
                 History
+              </a>
+              <a href="#contact" className="hover:bg-slate-300 p-3">
+                Contact us
               </a>
             </div>
           </HoverCardContent>

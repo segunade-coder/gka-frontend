@@ -74,3 +74,5 @@ nav .active {
     --radius: 0.5rem;
   }
 }
+section:not(.hero-content) {
+}

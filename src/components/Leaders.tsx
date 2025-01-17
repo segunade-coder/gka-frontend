@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 const Leaders = () => {
   return (
     <section
-      className="py-24 pb-10 px-5 lg:px-20 relative min-h-[100vh]"
+      className="py-24 pb-10 px-5 lg:px-20 relative min-h-[100vh] bg-slate-100"
       id="leaders"
     >
       <FloatingTag text="Founders" className="lg:-left-7" />
