@@ -65,7 +65,7 @@ const NewsCard = ({
         alt=""
         className="h-56 lg:h-44 w-full object-cover rounded-tl-lg rounded-tr-lg"
       />
-      <div className="absolute inset-0 bg-black/30 h-56 lg:h-44"></div>
+      <div className="absolute inset-0 bg-black/30 h-56 lg:h-44 rounded-lg"></div>
       <div className="p-4 py-10 lg:py-5">
         <h3 className="text-lg font-semibold pb-3 ">{title}</h3>
         <p className="text-xs min-h-[64px]">
@@ -169,7 +169,7 @@ export const EditNewsCard = ({
         alt=""
         className="h-56 lg:h-44 w-full object-cover rounded-tl-lg rounded-tr-lg"
       />
-      <div className="absolute inset-0 bg-black/30 h-56 lg:h-44"></div>
+      <div className="absolute inset-0 bg-black/30 h-56 lg:h-44 rounded-lg"></div>
 
       <div className="p-4 py-10 lg:py-5">
         <h3 className="font-semibold pb-3 ">
@@ -344,5 +344,52 @@ export const EditNewsCard = ({
     </div>
   );
 };
-
+export const UpcomingEventsCard = ({
+  image,
+  date,
+  title,
+  body,
+  id,
+  views,
+  likes,
+  edited,
+}: Props) => {
+  return (
+    <div className="relative card w-[100%] lg:w-[300px] rounded-lg shadow-lg lg:shadow-xl">
+      <img
+        src={image}
+        alt=""
+        className="h-60 lg:h-52 w-full object-cover rounded-tl-lg rounded-tr-lg"
+      />
+      <div className="absolute inset-0 bg-black/30 h-60 lg:h-52 rounded-lg"></div>
+      <div className="p-4 py-10 lg:py-5">
+        <h3 className="font-semibold pb-3 ">{title}</h3>
+        <p className="text-xs min-h-[64px]">
+          {body.slice(0, 150)} {body.length > 150 ? "..." : ""}
+        </p>
+        <div className="flex pt-3 mt-4 items-center justify-between">
+          <a
+            href={`news/${id}`}
+            className="py-3 px-4 rounded-md hover:underline w-fit gap-3 text-primary text-sm"
+          >
+            Read More
+          </a>
+          <div className="interactions flex gap-3">
+            <div className="info flex gap-1 text-xs items-center text-slate-500">
+              <BsEye className="" />
+              <span>{numberFormatter.format(views || 0)}</span>
+            </div>
+            <div className="info flex gap-1 text-xs items-center text-slate-500">
+              <BiLike className="" />
+              <span>{numberFormatter.format(likes || 0)}</span>
+            </div>
+            <div className="info flex gap-1 text-xs items-center text-slate-500">
+              <span>{edited ? "edited" : ""}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 export default NewsCard;

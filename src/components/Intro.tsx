@@ -14,9 +14,9 @@ const Intro = () => {
   return (
     <section
       id="intro"
-      className="w-full py-24 pb-10 px-5 lg:px-20 min-h-[100vh] bg-slate-100 relative"
+      className="w-full py-28 pb-10 px-5 lg:px-20 min-h-[100vh] bg-slate-100 relative"
     >
-      <FloatingTag text="Introduction" className="lg:-left-11" />
+      <FloatingTag text="Introduction" className="lg:-left-10" />
 
       <div className="welcome_message inline-flex items-center gap-5 text-primary">
         <h1 className="text-2xl font-bold">Welcome to </h1>
@@ -92,11 +92,11 @@ const Intro = () => {
       </div>
       <div className="flex">
         <Button
-          className="my-4 ring-1 ring-primary py-6 text-primary mx-auto rounded-none transition-all hover:bg-primary hover:text-white"
+          className="my-3 ring-1 ring-primary py-6 text-primary mx-auto rounded-none transition-all hover:bg-primary hover:text-white"
           variant={"ghost"}
           asChild
         >
-          <a href="#leaders">See Founders</a>
+          <a href="#leaders">See all leaders</a>
         </Button>
       </div>
     </section>

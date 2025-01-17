@@ -9,6 +9,13 @@ import {
 import { useLocation } from "react-router-dom";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
+import { Button } from "./ui/button";
+import { MdKeyboardArrowDown } from "react-icons/md";
 const Header = () => {
   const [bgColor, setBgColor] = useState("bg-primary");
   const [activeNav, setActiveNav] = useState<string>("");
@@ -68,28 +75,52 @@ const Header = () => {
       <div className="lg:w-[35%] py-5 lg:pl-32 pl-10">
         <img src={logo} alt="" className="scale-125" />
       </div>
-      <nav className="hidden lg:flex gap-8 flex-1 bg-red-00 pl-5 items-center pr-20 text-white">
+      <nav className="hidden lg:flex flex-1 bg-red-00 pl-5 items-center pr-20 text-white">
         <a
           href="/#"
-          className={`links ${activeNav === "" ? "active" : ""}`}
+          className={`links ${activeNav === "" ? "active" : ""} mr-5`}
           onClick={() => setActiveNav("")}
         >
           Home
         </a>
-        <a
-          href="/#programs"
-          className={`links ${activeNav === "#programs" ? "active" : ""}`}
-          onClick={() => setActiveNav("#programs")}
-        >
-          Learning Programs
-        </a>
-        <a
-          href="/#about"
-          className={`links ${activeNav === "#about" ? "active" : ""}`}
-          onClick={() => setActiveNav("#about")}
-        >
-          About us
-        </a>
+        <HoverCard>
+          <HoverCardTrigger asChild>
+            <Button variant={"link"} className="text-white hover:no-underline">
+              Learning Programs <MdKeyboardArrowDown />
+            </Button>
+          </HoverCardTrigger>
+          <HoverCardContent className="w-40 p-0">
+            <div className="flex flex-col text-sm">
+              <a href="#calendar" className="hover:bg-slate-300 p-3">
+                Calendar
+              </a>
+              <a href="#calendar" className="hover:bg-slate-300 p-3">
+                Programs
+              </a>
+            </div>
+          </HoverCardContent>
+        </HoverCard>
+
+        <HoverCard>
+          <HoverCardTrigger asChild>
+            <Button variant={"link"} className="text-white hover:no-underline">
+              About us <MdKeyboardArrowDown />
+            </Button>
+          </HoverCardTrigger>
+          <HoverCardContent className="w-40 p-0">
+            <div className="flex flex-col text-sm">
+              <a href="#intro" className="hover:bg-slate-300 p-3">
+                Introduction
+              </a>
+              <a href="#about" className="hover:bg-slate-300 p-3">
+                About school
+              </a>
+              <a href="#history" className="hover:bg-slate-300 p-3">
+                History
+              </a>
+            </div>
+          </HoverCardContent>
+        </HoverCard>
         {/* <a
           href="/#news"
           className={`links ${activeNav === "#news" ? "active" : ""}`}

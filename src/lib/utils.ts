@@ -29,6 +29,9 @@ export const numberFormatter = new Intl.NumberFormat(undefined, {
   minimumFractionDigits: 0,
   maximumFractionDigits: 1,
 });
+export const monthFormatter = new Intl.DateTimeFormat(undefined, {
+  month: "short",
+});
 export const getRandomImages = (i: number) => {
   const image = (i + 1) % 2 === 0 ? img1 : (1 + i) % 3 === 0 ? img2 : img3;
 

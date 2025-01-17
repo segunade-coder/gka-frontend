@@ -25,7 +25,7 @@ const Slider = ({ content }: Props) => {
         loop: true,
       }}
     >
-      <CarouselContent>
+      <CarouselContent className="">
         {content.map((data) => (
           <CarouselItem
             className="block w-full relative h-[calc(100vh-430px)] lg:h-[calc(100vh-72px)]"

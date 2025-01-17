@@ -21,7 +21,7 @@ const About = ({ content }: Props) => {
           qualities
         </p>
       </div>
-      <div className="flex gap-2 w-full py-5 flex-wrap lg:flex-wrap md:justify-center items-center ">
+      <div className="flex gap-2 w-full flex-wrap lg:flex-wrap md:justify-between items-center ">
         {content?.map((list) => (
           <AboutCard
             key={list.id}

@@ -10,7 +10,7 @@ const AboutCard = ({
   text: string;
 }) => {
   return (
-    <div className="relative shadow-md shadow-black/20 w-[100%] md:w-[45%] lg:w-[290px] md:min-h-[350px] md:max-h-[350px]  rounded-lg overflow-clip hover:shadow-lg group mt-5">
+    <div className="relative shadow-md shadow-black/20 w-[100%] md:w-[45%] lg:w-[290px] md:min-h-[360px] md:max-h-[360px]  rounded-lg overflow-clip hover:shadow-lg group mt-5">
       <img
         src={image}
         alt=""
